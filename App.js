@@ -1,28 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//React Element
-const heading = (<h1 id="heading" className="head"> 
-This is JSX Heading.
+//React Functional Component
+const Title = () => (<h1 id="heading" className="head"> 
+    This is Title Functional Component
 </h1>);
 
-//Functional components (Name should be start with Capital letter.)
-//single line return
-const HeadingComponents = () => <h1 className="heading">This is single line functional component.</h1>;
+//Nested React Components also called as Component Composition 
+const Title2 = () => (
+    <div className="second-component">
+        <Title/>
+        <h2> This is second Functional Components and Nested First components in this components</h2>
+    </div>
+)
 
-//Multiline with return statement
-const HeadingComponents2 = () => {
-    return <h1> This is multiline functional component with return statement.</h1>
-}
-
-//Multiline without return statement
-const HeadingComponents3 = () => (
+const Heading = () => (
      <div id="container">
-        <h1 className="heading">This is Multiline Functional Component without return statement.</h1>
+        <Title2 /> 
+        <h1 className="heading">Second Commponents nested in This Functional Compoonant</h1>
      </div>
 );
 
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponents3 />);
+root.render(<Heading />);
