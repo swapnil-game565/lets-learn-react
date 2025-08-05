@@ -6,19 +6,23 @@ const heading = (<h1 id="heading" className="head">
 This is JSX Heading.
 </h1>);
 
-console.log(heading);
-
-// javascript function that return true.
-const jsFn = () => true; // not need to use curly brases.
-
 //Functional components (Name should be start with Capital letter.)
-const HeadingComponents = () => (
+//single line return
+const HeadingComponents = () => <h1 className="heading">This is single line functional component.</h1>;
+
+//Multiline with return statement
+const HeadingComponents2 = () => {
+    return <h1> This is multiline functional component with return statement.</h1>
+}
+
+//Multiline without return statement
+const HeadingComponents3 = () => (
      <div id="container">
-        <h1 className="heading">This is return from Functional Components.</h1>
+        <h1 className="heading">This is Multiline Functional Component without return statement.</h1>
      </div>
 );
 
-const HeadingComponents2 = () => <h1 className="heading">This is return from Functional Components.</h1>;
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<HeadingComponents3 />);
