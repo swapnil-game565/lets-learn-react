@@ -11,7 +11,8 @@ const sum = 10 * 100;
 
 const Heading = () => (
     <div className="second-component">
-        <h1>{sum}</h1>
+        <h1>{100+300} {console.log('this is testing console log inside component.')}</h1>
+        {title}
         <h2> Printed Javascript value inside Functional Component. </h2>
     </div>
 )
