@@ -2,18 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 //React Element
-const heading = React.createElement("h1",{id:"heading"},"Laying the Foundation");
+const heading = (<h1 id="heading" className="head"> 
+This is JSX Heading.
+</h1>);
 
 console.log(heading);
 
-//JSX - JSX not html in javascript  or HTML inside javascript.
-//JSX is looks  like html/xml
-// JSX stands for JavaScript XML.
-// It’s a syntax extension for JavaScript that allows you to write HTML-like code inside JavaScript.
-// ✅ JSX lets you describe the UI structure in a way that feels like writing HTML, but under the hood it’s just JavaScript.
+// javascript function that return true.
+const jsFn = () => true; // not need to use curly brases.
 
-const jsxHeading = <h1 id="heading" className="head"> This is JSX Heading.</h1>
-console.log(jsxHeading);
+//Functional components (Name should be start with Capital letter.)
+const HeadingComponents = () => (
+     <div id="container">
+        <h1 className="heading">This is return from Functional Components.</h1>
+     </div>
+);
+
+const HeadingComponents2 = () => <h1 className="heading">This is return from Functional Components.</h1>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxHeading);
+root.render(heading);
