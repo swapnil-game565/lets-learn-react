@@ -1,40 +1,19 @@
-/**
- * <div id="parent">
- *      <div id="child">
- *          <h1>I'm H1 tag</h1>
- *          <h2>I'm H1 tag</h2>
- *      </div>
- * </div>
- * 
- */
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// this is React Core
+//React Element
+const heading = React.createElement("h1",{id:"heading"},"Laying the Foundation");
 
-// Chatpter 1-3
-    // const heading = React.createElement("h1", //html tag
-    //     { id: "heading" },  
-    //     "Hello world from React!"); 
-    //     //{} , "helloword " are both are props of H1 element.
+console.log(heading);
 
-    //     console.log(heading);  //heading is not a html tag, Its a react object. React liabrary will convert it into html tag.
+//JSX - JSX not html in javascript  or HTML inside javascript.
+//JSX is looks  like html/xml
+// JSX stands for JavaScript XML.
+// It’s a syntax extension for JavaScript that allows you to write HTML-like code inside JavaScript.
+// ✅ JSX lets you describe the UI structure in a way that feels like writing HTML, but under the hood it’s just JavaScript.
 
-    // const root = ReactDOM.createRoot(document.getElementById("root")); // this is react DOM
-
-
-    // root.render(heading); // Rending heading into the Root Tag
-
-
-// Chapter 4:
-const parent = React.createElement("div",
-            { id: "parent"},
-                React.createElement("div",
-                    { id:"child"},
-                    [React.createElement("h1",{id:"heading1"},"I'm an H1 tag."),
-                        React.createElement("h2",{id:"heading2"},"I'm an H2 tag.")
-                    ]
-                )
-        );
+const jsxHeading = <h1 id="heading" className="head"> This is JSX Heading.</h1>
+console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(parent);
+root.render(jsxHeading);
